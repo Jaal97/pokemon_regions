@@ -2,12 +2,16 @@
 
 import React from 'react'
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
+import RegionDetails from './RegionDetails';
 
 const RegionCard = (props: any) => {
 
     const [generation, setGeneration] = useState([]);
     const [isLoading, setLoading] = useState(true);
+
+   
 
     let url = props.url;
     let data = props.data;
@@ -40,37 +44,34 @@ const RegionCard = (props: any) => {
     console.log(data);
 
     return (
-        <div
-            className="block max-w-sm  md:max-w-xs m-4  lg:max-w-md rounded-lg bg-white shadow-secondary-1  mt-6">
-            <a href="#!">
-                <img
-                    className="rounded-t-lg"
-                    src={data.image}
-                    alt="" />
-            </a>
-            <div className="p-6 text-surface dark:text-white">
-                <h5 className="mb-2 text-xl font-medium leading-tight">Card title</h5>
-                <p className="mb-4 text-base text-fuchsia-950">
-                    {generation.main_region.name}
-                </p>
-                <h3 className='text-fuchsia-950 mt-2 mb-3'>Juegos</h3>
-                <div className='mt-2 grid grid-cols-2 gap-1  justify-evenly max-h-max'>
+        <Link href={`region/${generation.id}`} data={generation} id={generation.id}>
+            <div
+                className="block max-w-sm  md:max-w-xs m-4  lg:max-w-md md:h-max  rounded-lg bg-yellow-100 shadow-secondary-1 opacity-90  mt-6 p-4">
+                <div className=" text-surface flex justify-center">
 
-                    {generation.version_groups.map((version) => (
-                        <p className="mb-4 text-base text-fuchsia-950 w-26">
-                            {version.name}
-                        </p>
-                    ))}
-                </div>
-                <div>
-                    
-                   
-                    
-                   
+                    {
+                        generation.main_region.name === 'unova'
+
+                            ? <h5 className="mt-2 text-3xl font-bold  text-slate-950 capitalize font-heading 
+                            ">
+                                {generation.main_region.name} / Teselia
+                            </h5>
+
+                            : <h5 className="mt-2 text-3xl font-bold  text-slate-950 capitalize font-heading">
+                                {generation.main_region.name}
+                            </h5>
+                    }
                 </div>
 
+                <div className='flex justify-center '>
+                    <img
+                        className="w-11/12 h-48  object-cover pt-4 rounded-lg"
+                        src={data.image}
+                        alt="" />
+                </div>
             </div>
-        </div>
+        </Link>
+
     )
 }
 

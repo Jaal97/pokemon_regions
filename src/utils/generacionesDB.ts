@@ -21,7 +21,7 @@ export let generacionesDB = [
     },
     {
       'id': 5,
-      'image': 'https://pm1.aminoapps.com/6582/2624c01b2137a8ef6064fb6e0838aa8813a00c2d_hq.jpg',
+      'image': 'https://bolavip.com/__export/1567192597896/sites/bolavip/img/2019/08/30/pokemonunova_crop1567192597305.jpg_242310155.jpg',
       'description': 'El 29 de enero de 2010, la página oficial de Pokémon en Japón confirmaba la quinta generación, que seguirá siendo para Nintendo DS al igual que la cuarta generación. Esto supuso una ruptura con la política anterior: ninguna generación antes había abandonado el salto de consola. El 10 de febrero la revista CoroCoro hizo una publicación en la cual mostraba a un Pokémon llamado Zoroark y su preevolución llamada Zorua, los primeros mostrados en esta generación. Sus juegos son Pokémon Negro, Blanco y Negro 2 y Blanco 2. Esta generación es la que más Pokémon incluye. Incluyendo 156 nuevos Pokémon, desde el número 494 (Victini) hasta el 649 (Genesect).'
     },
     {
