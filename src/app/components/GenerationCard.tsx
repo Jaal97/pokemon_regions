@@ -4,14 +4,14 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import RegionDetails from './RegionDetails';
+import GenerationDetails from './GenerationDetails';
 
-const RegionCard = (props: any) => {
+const GenenerationCard = (props: any) => {
 
     const [generation, setGeneration] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
-   
+    
 
     let url = props.url;
     let data = props.data;
@@ -33,18 +33,19 @@ const RegionCard = (props: any) => {
 
 
     if (isLoading) {
-        return <div className='flex items-center justify-center h-screen bg-gray-100'>
-            <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
-            <p className="ml-2">cargando...</p>
-        </div>
+        // return <div className='flex items-center justify-center h-screen bg-gray-100'>
+        //     <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
+        //     <p className="ml-2">cargando...</p>
+        // </div>
+        return <div className='w-full h-screen bg-yellow-100 opacity-0'></div>
     }
 
-    console.log(generation)
-    console.log(generation.main_region.name);
+    // console.log(generation)
+    // console.log(generation.main_region.name);
     console.log(data);
 
     return (
-        <Link href={`region/${generation.id}`} data={generation} id={generation.id}>
+        <Link href={`generation/${generation.id}`} data={generation} id={generation.id}>
             <div
                 className="block max-w-sm  md:max-w-xs m-4  lg:max-w-md md:h-max  rounded-lg bg-yellow-100 shadow-secondary-1 opacity-90  mt-6 p-4">
                 <div className=" text-surface flex justify-center">
@@ -75,4 +76,4 @@ const RegionCard = (props: any) => {
     )
 }
 
-export default RegionCard
+export default GenenerationCard
