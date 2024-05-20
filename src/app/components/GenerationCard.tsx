@@ -4,7 +4,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import GenerationDetails from './GenerationDetails';
+// import GenerationDetails from './GenerationDetails';
 
 const GenenerationCard = (props: any) => {
 
@@ -42,7 +42,7 @@ const GenenerationCard = (props: any) => {
 
     // console.log(generation)
     // console.log(generation.main_region.name);
-    console.log(generation);
+    // console.log(generation);
 
     return (
         <Link href={`generation/${generation.id}`} data={generation} id={generation.id}>
