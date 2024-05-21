@@ -90,7 +90,7 @@ export let pokeCosasDB = [
         "\nUna característica distintiva de estos Pokémon es la gran existencia de variantes de los mismos, ya que hay Unowns de diferentes formas. Hasta el momento se conocen 28 tipos distintos de ellos, los primeros 26 representan a las letras del alfabeto, mientras que los dos restantes representan a dos signos ortográficos muy utilizados: La exclamación (!) y la interrogación (?)."+
         
         "\nLos Unown cobraron fuerte protagonismo dentro del mundo Pokémon, sobre todo al ser los protagonistas del juego Pokémon Cristal y del tercer filme de Pokémon, titulado El hechizo de los Unown.",
-        'image': 'https://i.pinimg.com/originals/db/7a/8f/db7a8fd918af807e4e081968dedf59e2.jpg'
+        'image': 'https://pbs.twimg.com/media/D1KPqtpWoAYtevJ.jpg'
 
     }
 ]

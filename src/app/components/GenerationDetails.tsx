@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { generacionesDB } from '@/utils/generacionesDB';
+import Link from 'next/link';
 
 const GenenerationDetails = (props: any) => {
 
@@ -43,18 +44,18 @@ const GenenerationDetails = (props: any) => {
     return (
 
         <div className="p-6 m-6 relative text-surface flex flex-col justify-center bg-yellow-100 opacity-95 w-4/5  max-w-[60rem] mx-auto rounded-lg">
-           
+
             <h5 className=" text-3xl font-bold text-slate-700 capitalize font-heading text-center ">{generation.names[5].name.split('Generación ')} Generación </h5>
             {
                 generation.main_region.name === 'unova'
-                        
+
                     ? <p className='text-center mb-2 text-xl font-medium text-slate-600 capitalize '>({generation.main_region.name} / Teselia) </p>
 
                     : <p className='text-center mb-2 text-xl font-medium text-slate-600 capitalize'>({generation.main_region.name})</p>
             }
 
             <picture className='flex justify-center w-full'>
-                <img src={generaciones[id-1].image} className='rounded-lg ' alt="img_generation" />
+                <img src={generaciones[id - 1].image} className='rounded-lg ' alt="img_generation" />
             </picture>
 
             <h3 className='mb-4 mt-5 text-xl font-bold text-slate-700 capitalize font-heading text-center'>Juegos o Versiones</h3>
@@ -70,29 +71,58 @@ const GenenerationDetails = (props: any) => {
 
             <div>
                 <p className='text-justify text-lg'>
-                    {generaciones[id-1].description}
+                    {generaciones[id - 1].description}
                 </p>
             </div>
 
-           
+
             {
                 generation.main_region.name === 'unova'
-                        
+
                     ? <h5 className='mb-4 mt-5 text-xl font-bold text-slate-700 capitalize font-heading text-center '>Mapa de {generation.main_region.name} / Teselia </h5>
 
                     : <h5 className='mb-4 mt-5 text-xl font-bold text-slate-700  font-heading text-center capitalize'>Mapa de {generation.main_region.name} </h5>
             }
-           
+
 
             <picture className='flex justify-center'>
-                <img src={generaciones[id-1].map_img} alt="" />
+                <img src={generaciones[id - 1].map_img} alt="" />
             </picture>
 
             <div>
                 <p className='text-justify text-lg mt-4'>
-                    {generaciones[id-1].description_2}
+                    {generaciones[id - 1].description_2}
                 </p>
             </div>
+
+            <Link href={`/pokemons/${generaciones[id-1].pokemons}`} >
+            <div>
+                <h5 className='mb-4 mt-5 text-xl font-bold text-slate-700 capitalize font-heading text-center '>
+                    Pokémones De Esta Generación
+                </h5>
+            </div>
+
+            <div className='flex justify-between mr-6 ml-6'>
+                <p className='text-justify text-lg font-medium mt-4'>
+                    Segun su número en la pokedex:
+                </p>
+                <p className='mt-4  text-xl font-bold'>
+                {generaciones[id - 1].pokemons[0] } / {generaciones[id - 1].pokemons[1]}
+                </p>
+                  
+               
+            </div>
+
+            <div className='flex justify-between mr-6 ml-6'>
+            <p className='text-justify text-lg font-medium mt-4'>
+                    Total de Pokémones Agregados:
+                </p>
+                <p className='mt-4  text-xl font-bold'>
+                {generaciones[id - 1].total_poke_in}
+                </p>
+            </div>
+            </Link>
+            
 
         </div>
 
