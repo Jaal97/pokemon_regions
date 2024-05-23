@@ -3,13 +3,15 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import { generacionesDB } from '@/utils/generacionesDB';
 
 const PokemonCard = (props) => {
+    const generaciones = generacionesDB;
 
     const params = useParams()
     let data = params.data;
-    let poke_in = ''
-    let poke_end = ''
+    let poke_in = generaciones[data-1].pokemons[0]
+    let poke_end = generaciones[data-1].pokemons[1]
    
 
 
@@ -40,8 +42,9 @@ const PokemonCard = (props) => {
     }
 
     console.log(poke_in);
-    console.log(data)
-    console.log(pokemons.pokemon_entries[0]);
+    console.log(poke_end);
+    // console.log(generaciones[data-1].pokemons)
+    console.log(pokemons.pokemon_entries[poke_in -1]);
 
   return (
     <div>PokemonCard</div>

@@ -95,7 +95,7 @@ const GenenerationDetails = (props: any) => {
                 </p>
             </div>
 
-            <Link href={`/pokemons/${generaciones[id-1].pokemons}`} >
+            <Link href={`/pokemons/${generaciones[id-1].id}`} >
             <div>
                 <h5 className='mb-4 mt-5 text-xl font-bold text-slate-700 capitalize font-heading text-center '>
                     Pokémones De Esta Generación
