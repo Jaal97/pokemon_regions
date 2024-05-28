@@ -80,19 +80,30 @@ const PokemonCard = (props) => {
     // console.log(pokemons_data)
 
     for (const p in pokemons_data) {
-        setPokeTotal.name(pokemons_data[p].pokemon_species.name)
-        // poke_nums.push(pokemons_data[p].entry_number)
-        pokeTotal.num =pokemons_data[p].entry_number
-        // poke_img_p.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`)
+        poke_names.push(pokemons_data[p].pokemon_species.name)
+        poke_nums.push(pokemons_data[p].entry_number)
+        // pokeTotal.num =pokemons_data[p].entry_number
+        poke_img_p.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`)
         pokeTotal.img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`
     }
     // console.log(poke_names);
-    console.log(pokeTotal);
+    // console.log(pokeTotal);
     return (
         <div>
             <div className=' '>
-                {poke_nums.map((num) => (
-                    <span key={num}>{num}</span>
+                {poke_nums.map((num, p) => (
+                   
+                    <div className='flex'>
+                        {/* <span>{p}</span>
+                        <span>-</span> */}
+                        <p>N°</p>
+                        <span>0{num} </span>
+                       
+                        <span>{poke_names[p]}</span>
+                        <picture>
+                            <img src={poke_img_p[p]} alt="poke" />
+                        </picture>
+                    </div>
                 ))}
             </div>
         </div>
