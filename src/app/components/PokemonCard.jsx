@@ -6,12 +6,13 @@ import { useParams, useRouter } from 'next/navigation';
 import { generacionesDB } from '@/utils/generacionesDB';
 
 const PokemonCard = (props) => {
+
     const generaciones = generacionesDB;
 
     const params = useParams()
     let data = params.data;
-    let poke_in = generaciones[data - 1].pokemons[0] - 1
-    let poke_end = generaciones[data - 1].pokemons[1]
+    let poke_in = Number(generaciones[data - 1].pokemons[0] - 1)
+    let poke_end = Number(generaciones[data - 1].pokemons[1])
 
 
     // guardar los datos de los pokemons
@@ -28,16 +29,11 @@ const PokemonCard = (props) => {
     //imagen del Pokémon
     let poke_img_p = [];
 
-    const [pokeTotal, setPokeTotal] = useState([{
-        num: 0,
-        name: '',
-        img: '',
-    }]);
-    // let pokemons_total = {
-    //      num: 0,
-    //      name: '',
-    //      img: ''
-    // }
+    // const [pokeTotal, setPokeTotal] = useState([{
+    //     num: 0,
+    //     name: '',
+    //     img: '',
+    // }]);
 
     // pokemons_total.num = poke_nums;
     // pokemons_total.name = poke_names;
@@ -45,12 +41,18 @@ const PokemonCard = (props) => {
 
 
     const [pokemons, setPokemons] = useState([]);
-    const [poke, setPoke] = useState([]);
+
+    //guardar tipo pokemon
+    const [tipos, setTipos] = useState([]);
+
+    // const [poke, setPoke] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
     let url = `${process.env.NEXT_PUBLIC_API_URL}/pokedex/1`;
 
+
     useEffect(() => {
+
         fetch(url, {
             method: 'GET',
             headers: {
@@ -64,6 +66,28 @@ const PokemonCard = (props) => {
             })
     }, [isLoading])
 
+    let ind_url = Number(poke_in + 1)
+
+//    for (let i = poke_in + 1; i <= poke_end; i++) {
+        
+//         ind_url ++;
+//         console.log(ind_url);
+
+//         let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${{i}}`
+//           fetch(url, {
+//               method: 'GET',
+//               headers: {
+//                   "Content-Type": "application/json",
+//               },
+//           })
+//               .then((res) => res.json())
+//               .then((data) => {
+//                   setTipos(data)
+//                   setLoading(false)
+//               })
+//               , [isLoading]
+//    }
+
     if (isLoading) {
         return <div className='flex items-center justify-center h-screen bg-gray-100'>
             <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
@@ -71,8 +95,7 @@ const PokemonCard = (props) => {
         </div>
     }
 
-    // console.log(poke_in);
-    // console.log(poke_end)
+    console.log(tipos);
 
     // console.log(generaciones[data-1].pokemons)
     pokemons_data = pokemons.pokemon_entries.slice(poke_in, poke_end)
@@ -82,24 +105,23 @@ const PokemonCard = (props) => {
     for (const p in pokemons_data) {
         poke_names.push(pokemons_data[p].pokemon_species.name)
         poke_nums.push(pokemons_data[p].entry_number)
-        // pokeTotal.num =pokemons_data[p].entry_number
         poke_img_p.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`)
-        pokeTotal.img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`
     }
-    // console.log(poke_names);
-    // console.log(pokeTotal);
+
+    // console.log(pokemons_data);
+
     return (
         <div>
             <div className=' '>
                 {poke_nums.map((num, p) => (
-                   
+
                     <div className='flex'>
                         {/* <span>{p}</span>
                         <span>-</span> */}
-                        <p>N°</p>
+                        <p>N° </p>
                         <span>0{num} </span>
-                       
-                        <span>{poke_names[p]}</span>
+
+                        <span> {poke_names[p]}</span>
                         <picture>
                             <img src={poke_img_p[p]} alt="poke" />
                         </picture>

@@ -34,11 +34,19 @@ const GenenerationDetails = (props: any) => {
 
     // console.log(generacionesDB[id - 1]);
 
+    // if (isLoading) {
+    //     return <div className='flex items-center justify-center h-screen bg-gray-100'>
+    //         <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
+    //         <p className="ml-2">cargando...</p>
+    //     </div>
+    // }
+
     if (isLoading) {
-        return <div className='flex items-center justify-center h-screen bg-gray-100'>
-            <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
-            <p className="ml-2">cargando...</p>
-        </div>
+        // return <div className='flex items-center justify-center h-screen bg-gray-100'>
+        //     <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
+        //     <p className="ml-2">cargando...</p>
+        // </div>
+        return <div className='w-full h-screen bg-yellow-100 opacity-0'></div>
     }
 
     return (
