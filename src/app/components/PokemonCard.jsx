@@ -29,6 +29,9 @@ const PokemonCard = (props) => {
     //imagen del Pokémon
     let poke_img_p = [];
 
+    //tipos
+    let typos_poke = []
+
     // const [pokeTotal, setPokeTotal] = useState([{
     //     num: 0,
     //     name: '',
@@ -64,29 +67,31 @@ const PokemonCard = (props) => {
                 setPokemons(data)
                 setLoading(false)
             })
+
+            for (let i = poke_in + 1; i <= poke_end; i++) {
+
+
+
+                let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        setTipos(data)
+                        typos_poke.push(tipos)
+                        // setLoading(false)
+                    })
+                    
+            }
     }, [isLoading])
 
     let ind_url = Number(poke_in + 1)
 
-//    for (let i = poke_in + 1; i <= poke_end; i++) {
-        
-//         ind_url ++;
-//         console.log(ind_url);
-
-//         let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${{i}}`
-//           fetch(url, {
-//               method: 'GET',
-//               headers: {
-//                   "Content-Type": "application/json",
-//               },
-//           })
-//               .then((res) => res.json())
-//               .then((data) => {
-//                   setTipos(data)
-//                   setLoading(false)
-//               })
-//               , [isLoading]
-//    }
+    
 
     if (isLoading) {
         return <div className='flex items-center justify-center h-screen bg-gray-100'>
@@ -95,7 +100,7 @@ const PokemonCard = (props) => {
         </div>
     }
 
-    console.log(tipos);
+    // console.log(typeof(poke_end));
 
     // console.log(generaciones[data-1].pokemons)
     pokemons_data = pokemons.pokemon_entries.slice(poke_in, poke_end)
@@ -109,7 +114,7 @@ const PokemonCard = (props) => {
     }
 
     // console.log(pokemons_data);
-
+    console.log(typos_poke)
     return (
         <div>
             <div className=' '>
