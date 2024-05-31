@@ -30,7 +30,7 @@ const PokemonCard = (props) => {
     let poke_img_p = [];
 
     //tipos
-    let typos_poke = []
+    let typos_poke = [];
 
     // const [pokeTotal, setPokeTotal] = useState([{
     //     num: 0,
@@ -68,25 +68,7 @@ const PokemonCard = (props) => {
                 setLoading(false)
             })
 
-            for (let i = poke_in + 1; i <= poke_end; i++) {
-
-
-
-                let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
-                fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        setTipos(data)
-                        typos_poke.push(tipos)
-                        // setLoading(false)
-                    })
-                    
-            }
+            
     }, [isLoading])
 
     let ind_url = Number(poke_in + 1)
@@ -113,8 +95,30 @@ const PokemonCard = (props) => {
         poke_img_p.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`)
     }
 
+    for (let i = poke_in + 1; i <= poke_end; i++) {
+
+
+
+        let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setTipos(data)
+                
+                // setLoading(false)
+            })
+            
+            
+        //    typos_poke.push(tipos)
+    }
+    typos_poke.push(tipos)
     // console.log(pokemons_data);
-    console.log(typos_poke)
+    console.log(tipos)
     return (
         <div>
             <div className=' '>
