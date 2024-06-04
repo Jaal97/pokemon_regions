@@ -4,6 +4,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { generacionesDB } from '@/utils/generacionesDB';
+import TipePokemon from './TipePokemon'
 
 const PokemonCard = (props) => {
 
@@ -32,6 +33,8 @@ const PokemonCard = (props) => {
     //tipos
     let typos_poke = [];
 
+
+
     // const [pokeTotal, setPokeTotal] = useState([{
     //     num: 0,
     //     name: '',
@@ -46,7 +49,7 @@ const PokemonCard = (props) => {
     const [pokemons, setPokemons] = useState([]);
 
     //guardar tipo pokemon
-    const [tipos, setTipos] = useState([]);
+    let [tipos, setTipos] = useState([]);
 
     // const [poke, setPoke] = useState([]);
     const [isLoading, setLoading] = useState(true);
@@ -68,12 +71,35 @@ const PokemonCard = (props) => {
                 setLoading(false)
             })
 
-            
+
+        for (let i = poke_in + 1; i <= poke_end; i++) {
+
+
+
+            let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    tipos.push(data)
+                    // typos_poke.push(data)
+                    // setLoading(false)
+                })
+            // typos_poke.push(tipos)
+
+            //    typos_poke.push(tipos)
+        }
+
+
     }, [isLoading])
 
-    let ind_url = Number(poke_in + 1)
+    // let ind_url = Number(poke_in + 1)
 
-    
+
 
     if (isLoading) {
         return <div className='flex items-center justify-center h-screen bg-gray-100'>
@@ -95,30 +121,15 @@ const PokemonCard = (props) => {
         poke_img_p.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`)
     }
 
-    for (let i = poke_in + 1; i <= poke_end; i++) {
 
 
+    //    console.log(poke_in);
+    //    console.log(poke_end);
 
-        let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                setTipos(data)
-                
-                // setLoading(false)
-            })
-            
-            
-        //    typos_poke.push(tipos)
-    }
-    typos_poke.push(tipos)
+    // console.log(tipos);
+
     // console.log(pokemons_data);
-    console.log(tipos)
+
     return (
         <div>
             <div className=' '>
@@ -134,6 +145,9 @@ const PokemonCard = (props) => {
                         <picture>
                             <img src={poke_img_p[p]} alt="poke" />
                         </picture>
+                        <div>
+                            <TipePokemon id={num}/>
+                        </div>
                     </div>
                 ))}
             </div>
