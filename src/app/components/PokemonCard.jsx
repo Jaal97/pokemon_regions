@@ -97,9 +97,6 @@ const PokemonCard = (props) => {
 
     }, [isLoading])
 
-    // let ind_url = Number(poke_in + 1)
-
-
 
     if (isLoading) {
         return <div className='flex items-center justify-center h-screen bg-gray-100'>
