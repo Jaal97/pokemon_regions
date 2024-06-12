@@ -9,9 +9,12 @@ const TipePokemon = (props) => {
     
     const [tipos, setTipos] = useState([]);
 
+    //Tipos
     let tipo_1 = '';
     let tipo_2 = '';
    
+    //Color
+    let color_1 = '';
 
     let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${id}`;
 
@@ -35,7 +38,7 @@ const TipePokemon = (props) => {
     
 
     if (isLoading) {
-        return <div className='flex items-center justify-center h-screen bg-gray-100'>
+        return <div className='flex items-center justify-center '>
             <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
             <p className="ml-2">cargando...</p>
         </div>
@@ -94,6 +97,7 @@ const TipePokemon = (props) => {
     break;
     case "water":
         tipo_1 = 'agua';
+        color_1 = '#3DF5F5';
     break;
     case "dragon":
         tipo_1 = 'dragon';
@@ -167,16 +171,16 @@ const TipePokemon = (props) => {
 
   return (
     <div>
-        <p>{tipo_1}</p>
+        <p className='capitalize text-[{color_1}]'>{tipo_1} 
         {
             !ver
             
             ? 
             <p></p>
             :
-            <p>{tipo_2}</p>
+            <span> / {tipo_2}</span> 
         }
-        
+        </p>
     </div>
   )
 }

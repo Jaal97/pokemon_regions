@@ -99,7 +99,7 @@ const PokemonCard = (props) => {
 
 
     if (isLoading) {
-        return <div className='flex items-center justify-center h-screen bg-gray-100'>
+        return <div className='flex items-center justify-center h-screen'>
             <div className="border-top-color:transparent w-8 h-8 border-4 border-blue-200 rounded-full animate-spin"></div>
             <p className="ml-2">cargando...</p>
         </div>
@@ -129,23 +129,24 @@ const PokemonCard = (props) => {
 
     return (
         <div>
-            <div className=' '>
+            <div className='grid grid-cols-3 gap-2  items-center'>
                 {poke_nums.map((num, p) => (
 
-                    <div className='flex'>
-                        {/* <span>{p}</span>
-                        <span>-</span> */}
-                        <p>N° </p>
-                        <span>0{num} </span>
+                    <div className='flex flex-col justify-center items-center pt-4 pb-4  '>
+                        <div className='flex flex-col  justify-center items-center  pt-2  pb-2   w-11/12 sm:w-3/5 md:3/6 lg:w-2/5 xl:w-44 xl:3/6 2xl:w-1/4 bg-slate-100'>
 
-                        <span> {poke_names[p]}</span>
-                        <picture>
-                            <img src={poke_img_p[p]} alt="poke" />
-                        </picture>
-                        <div>
-                            <TipePokemon id={num}/>
+                            <p className=''> N° 0{num} </p>
+
+                            <p className='capitalize '>{poke_names[p]}</p>
+                            <picture>
+                                <img src={poke_img_p[p]} alt="poke" />
+                            </picture>
+                            <div className='text-center'>
+                                <TipePokemon id={num} />
+                            </div>
                         </div>
                     </div>
+
                 ))}
             </div>
         </div>
