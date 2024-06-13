@@ -129,11 +129,16 @@ const PokemonCard = (props) => {
 
     return (
         <div>
-            <div className='grid grid-cols-3 gap-2  items-center'>
+
+
+           
+
+
+            <div className='grid grid-cols-3 xl:grid-cols-6 gap-2  items-center'>
                 {poke_nums.map((num, p) => (
 
                     <div className='flex flex-col justify-center items-center pt-4 pb-4  '>
-                        <div className='flex flex-col  justify-center items-center  pt-2  pb-2   w-11/12 sm:w-3/5 md:3/6 lg:w-2/5 xl:w-44 xl:3/6 2xl:w-1/4 bg-slate-100'>
+                        <div className='flex flex-col  justify-center items-center  pt-2  pb-2  border border-gray-400 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] rounded-lg max-w-40 min-w-max w-11/12 sm:w-3/5 md:w-3/6 lg:w-5/12 xl:w-4/6 2xl:w-3/6  bg-slate-100'>
 
                             <p className=''> N° 0{num} </p>
 
@@ -141,7 +146,7 @@ const PokemonCard = (props) => {
                             <picture>
                                 <img src={poke_img_p[p]} alt="poke" />
                             </picture>
-                            <div className='text-center'>
+                            <div className='text-center pb-2 pr-2 pl-2'>
                                 <TipePokemon id={num} />
                             </div>
                         </div>

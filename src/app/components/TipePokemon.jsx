@@ -171,7 +171,7 @@ const TipePokemon = (props) => {
 
   return (
     <div>
-        <p className='capitalize text-[{color_1}]'>{tipo_1} 
+        <p className='capitalize text-[]'>{tipo_1} 
         {
             !ver
             
