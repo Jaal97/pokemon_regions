@@ -169,16 +169,18 @@ const TipePokemon = (props) => {
         ""
    }
 
+   let color = '#1da1f2';
+
   return (
     <div>
-        <p className='capitalize text-[]'>{tipo_1} 
+        <p className='capitalize text-[{color}]'>{tipo_1} 
         {
             !ver
             
             ? 
             <p></p>
             :
-            <span> / {tipo_2}</span> 
+            <span className='text-${color}'> / {tipo_2}</span> 
         }
         </p>
     </div>
