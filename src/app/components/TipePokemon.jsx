@@ -97,7 +97,6 @@ const TipePokemon = (props) => {
     break;
     case "water":
         tipo_1 = 'agua';
-        color_1 = '#3DF5F5';
     break;
     case "dragon":
         tipo_1 = 'dragon';
@@ -169,18 +168,17 @@ const TipePokemon = (props) => {
         ""
    }
 
-   let color = '#1da1f2';
 
   return (
     <div>
-        <p className='capitalize text-[color]'>{tipo_1} 
+        <p className={`capitalize  text-lg font-semibold ${tipo_1}`}>{tipo_1} 
         {
             !ver
             
             ? 
             <p></p>
             :
-            <span className='text-${color}'> / {tipo_2}</span> 
+            <span className={`${tipo_2}`}> {tipo_2}</span> 
         }
         </p>
     </div>

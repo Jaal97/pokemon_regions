@@ -7,3 +7,76 @@
     font-weight: 500;
     src: url('https://fonts.cdnfonts.com/css/pokemon-solid');
 }
+
+
+.roca{
+    color: #c8b68a;
+}
+
+.hielo{
+    color:#73cebf;
+} 
+        
+.bicho{
+    color: #8fbf2a;
+} 
+        
+.electrico{
+    color: #f4cf39;
+} 
+
+.hada{
+    color: #eb8fe8;
+} 
+
+.siniestro{
+    color: #595164;
+}
+
+.lucha{
+    color: #cd3d69;
+}
+
+.fuego{
+    color:#fe9951;
+}
+
+.volador{
+    color: #92aadd;
+}
+
+.fantasma{
+    color: #5269ab;
+}
+        
+.planta{
+    color: #64ba5c;
+}
+
+.veneno{
+    color: #ab69c7;
+}
+
+.psiquico{
+    color: #f87076;
+}
+        
+.acero{
+    color: #5b8ea1;
+}
+
+.agua{
+    color: #4d8fd4;
+}
+
+.dragon{
+    color: #096cc3;
+}
+
+.tierra{
+    color: #d97645;
+} 
+
+.normal{
+    color: #8d969f;
+}
