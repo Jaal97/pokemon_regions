@@ -106,26 +106,26 @@ const GenenerationDetails = (props: any) => {
             <Link href={`/pokemons/${generaciones[id-1].id}`} >
             <div>
                 <h5 className='mb-4 mt-5 text-xl font-bold text-slate-700 capitalize font-heading text-center '>
-                    Pokémones De Esta Generación
+                    Pokémons De Esta Generación
                 </h5>
             </div>
 
-            <div className='flex justify-between mr-6 ml-6'>
-                <p className='text-justify text-lg font-medium mt-4'>
+            <div className='flex w-full mr-6 ml-6'>
+                <p className='text-justify text-lg font-medium mt-4 w-2/4'>
                     Segun su número en la pokedex:
                 </p>
-                <p className='mt-4  text-xl font-bold'>
+                <p className='mt-4  text-xl font-bold w-2/4 ml-8'>
                 {generaciones[id - 1].pokemons[0] } / {generaciones[id - 1].pokemons[1]}
                 </p>
                   
                
             </div>
 
-            <div className='flex justify-between mr-6 ml-6'>
-            <p className='text-justify text-lg font-medium mt-4'>
-                    Total de Pokémones Agregados:
+            <div className='flex justify-between mr-6 ml-6 w-full' >
+            <p className='text-justify text-lg font-medium mt-4 w-2/4 '>
+                    Total de Pokémons Agregados:
                 </p>
-                <p className='mt-4  text-xl font-bold'>
+                <p className='mt-4  text-xl font-bold w-2/4 ml-8'>
                 {generaciones[id - 1].total_poke_in}
                 </p>
             </div>
