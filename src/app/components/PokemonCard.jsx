@@ -4,7 +4,9 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { generacionesDB } from '@/utils/generacionesDB';
-import TipePokemon from './TipePokemon'
+import TipePokemon from './TipePokemon';
+
+
 
 const PokemonCard = (props) => {
 
@@ -25,6 +27,26 @@ const PokemonCard = (props) => {
     // guardar los datos de los pokemons
 
     //datos generales
+function PaginationSection() {
+    return (
+        <Pagination>
+            <PaginationContent>
+                <PaginationItem>
+                    <PaginationPrevious href="#" />
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationEllipsis />
+                </PaginationItem>
+                <PaginationItem>
+                    <PaginationNext href="#" />
+                </PaginationItem>
+            </PaginationContent>
+        </Pagination>
+    )
+}
     let pokemons_data = [];
 
     //numero en la pokedex
@@ -181,8 +203,11 @@ const PokemonCard = (props) => {
                 ))
                 }
             </div >
+            
         </div >
     )
 }
+
+
 
 export default PokemonCard
