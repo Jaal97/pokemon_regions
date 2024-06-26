@@ -10,43 +10,16 @@ import TipePokemon from './TipePokemon';
 
 const PokemonCard = (props) => {
 
-    const [isClick, setisClick] = useState(false);
-    const toggleNavbar = () => {
-        setisClick(!isClick)
-    }
-
+    let gen = props.gen;
 
     const generaciones = generacionesDB;
 
-    const params = useParams()
-    let data = params.data;
-    let poke_in = Number(generaciones[data - 1].pokemons[0] - 1)
-    let poke_end = Number(generaciones[data - 1].pokemons[1])
-
-
-    // guardar los datos de los pokemons
+    const params = useParams();
+    let data = gen ? params.data : 0;
 
     //datos generales
-function PaginationSection() {
-    return (
-        <Pagination>
-            <PaginationContent>
-                <PaginationItem>
-                    <PaginationPrevious href="#" />
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink href="#">1</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationEllipsis />
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationNext href="#" />
-                </PaginationItem>
-            </PaginationContent>
-        </Pagination>
-    )
-}
+
+    // guardar los datos de los pokemons
     let pokemons_data = [];
 
     //numero en la pokedex
@@ -58,33 +31,24 @@ function PaginationSection() {
     //imagen del Pokémon
     let poke_img_p = [];
 
-    //tipos
-    let typos_poke = [];
+    //entradas poke
+    let poke_in = 0;
+    let poke_end = 0;
 
 
-    //Descripción del Pokémon
-    let poke_description = [];
+    poke_in = gen ? Number(generaciones[data - 1].pokemons[0] - 1) : 0;
+    poke_end = gen ? Number(generaciones[data - 1].pokemons[1]) : 1025;
 
 
-
-    // const [pokeTotal, setPokeTotal] = useState([{
-    //     num: 0,
-    //     name: '',
-    //     img: '',
-    // }]);
 
     // pokemons_total.num = poke_nums;
     // pokemons_total.name = poke_names;
     // pokemons_total.img = poke_img_p;
 
-
     const [pokemons, setPokemons] = useState([]);
 
     //guardar tipo pokemon
     let [tipos, setTipos] = useState([]);
-
-    //guardar descripcion del Pokémon
-    let [descriptions, setDescriptions] = useState([]);
 
 
     // const [poke, setPoke] = useState([]);
@@ -108,44 +72,24 @@ function PaginationSection() {
             })
 
 
-        for (let i = poke_in + 1; i <= poke_end; i++) {
-            let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
-            fetch(url, {
-                method: 'GET',
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    tipos.push(data)
-                    // typos_poke.push(data)
-                    // setLoading(false)
-                })
-
-
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/pokemon-species/${i}`,
-                {
-                    method: 'GET',
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                .then((res) => res.json())
-                .then((data) => {
-                    descriptions.push(data)
-                    // typos_poke.push(data)
-                    // setLoading(false)
-                })
-            // typos_poke.push(tipos)
-
-            //    typos_poke.push(tipos)
-        }
+        // for (let i = poke_in + 1; i <= poke_end; i++) {
+        //     let url = `${process.env.NEXT_PUBLIC_API_URL}/pokemon/${i}`
+        //     fetch(url, {
+        //         method: 'GET',
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         },
+        //     })
+        //         .then((res) => res.json())
+        //         .then((data) => {
+        //             tipos.push(data)
+        //             // typos_poke.push(data)
+        //             // setLoading(false)
+        //         })
+        // }
 
 
     }, [isLoading])
-
-
 
 
     if (isLoading) {
@@ -155,8 +99,7 @@ function PaginationSection() {
         </div>
     }
 
-    // console.log(typeof(poke_end));
-
+    //console.log(pokemons.pokemon_entries);
     // console.log(generaciones[data-1].pokemons)
     pokemons_data = pokemons.pokemon_entries.slice(poke_in, poke_end)
     // console.log(pokemons.pokemon_entries.slice(poke_in,poke_end));
@@ -170,9 +113,9 @@ function PaginationSection() {
     }
 
 
-
-    //    console.log(poke_in);
-    //    console.log(poke_end);
+    // console.log(pokemons[0])
+    //console.log(poke_in);
+    // console.log(poke_end);
     //console.log(descriptions[0].flavor_text_entries[50].flavor_text);
     // console.log(tipos);
     // console.log(poke_description)
@@ -203,11 +146,9 @@ function PaginationSection() {
                 ))
                 }
             </div >
-            
         </div >
     )
 }
-
 
 
 export default PokemonCard

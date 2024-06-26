@@ -30,7 +30,7 @@ const Navbar = () => {
               <a href="#" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Pokémon Go</a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Pokédex</a>
+              <a href="/pokedex" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Pokédex</a>
             </li>
           </ul>
         </div>
