@@ -21,16 +21,16 @@ const Navbar = () => {
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  ">
             <li>
-              <Link href="/" className="block py-2 px-3 text-xl text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Home</Link>
+              <Link href="/" className="block py-2 px-3 text-xl text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Home</Link>
             </li>
             <li>
-              <Link href="/generaciones" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Generaciones</Link>
+              <Link href="/generaciones" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Generaciones</Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Pokémon Go</a>
+              <a href="#" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Pokémon Go</a>
             </li>
             <li>
-              <a href="/pokedex" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   md:dark:hover:bg-transparent">Pokédex</a>
+              <a href="/pokedex" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Pokédex</a>
             </li>
           </ul>
         </div>
@@ -79,17 +79,17 @@ const Navbar = () => {
             {isClick && (
               <div className='md:hidden '>
 
-                <ul className='text-slate-950 z-10 md:flex md:items-center  md:static absolute  w-full left-0 md:w-auto md:py-0 py-4 md:pl-0  mt-5  bg-blue-50'>
+                <ul className='text-slate-950 z-10 md:flex md:items-center  md:static absolute  w-full left-0 md:w-auto md:py-0 py-4 md:pl-0  mt-5  bg-yellow-50'>
 
                   <li className='mx-4 my-6 lg:my-0'>
-                    <Link className='text-xl md:hover:text-blue-700 md:p-0  hover:text-blue-500 duration-400' href="/">
+                    <Link className='text-xl  md:p-0  hover:text-blue-600 duration-400' href="/">
                       <button onClick={toggleNavbar} className="flex">
                         <span className="">Home</span>
                       </button>
                     </Link>
                   </li>
                   <li className='mx-4 my-6 md:my-0'>
-                    <Link className='text-xl md:hover:text-blue-700 md:p-0  hover:text-blue-500 duration-400' href="/generaciones">
+                    <Link className='text-xl  md:p-0  hover:text-blue-600 duration-400' href="/generaciones">
                       <button onClick={toggleNavbar} className="flex">
                         
                         <span>Generaciones</span>
@@ -97,7 +97,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className='mx-4 my-6 lg:my-0'>
-                    <Link className='text-xl md:hover:text-blue-700 md:p-0  hover:text-blue-500 duration-400' href="/pokego">
+                    <Link className='text-xl  md:p-0  hover:text-blue-600 duration-400' href="/pokego">
                       <button onClick={toggleNavbar} className="flex">
                       
                         <span>Pokémon Go</span>
@@ -105,7 +105,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className='mx-4 my-6 lg:my-0'>
-                    <Link className='text-xl md:hover:text-blue-700 md:p-0  hover:text-blue-500 duration-400' href="/pokedex">
+                    <Link className='text-xl  md:p-0  hover:text-blue-600 duration-400' href="/pokedex">
                       <button onClick={toggleNavbar} className="flex">
                        
                         <span>Pokédex</span>
