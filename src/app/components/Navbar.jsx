@@ -27,7 +27,7 @@ const Navbar = () => {
               <Link href="/generaciones" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Generaciones</Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Pokémon Go</a>
+              <a href="/pokego" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Pokémon Go</a>
             </li>
             <li>
               <a href="/pokedex" className="block py-2 px-3 text-xl text-gray-900 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  hover:text-blue-500   ">Pokédex</a>
