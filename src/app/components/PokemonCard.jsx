@@ -31,6 +31,7 @@ const PokemonCard = (props) => {
 
     //imagen del Pokémon
     let poke_img_p = [];
+    let poke_img_g = [];
 
     //entradas poke
     let poke_in = 0;
@@ -110,6 +111,7 @@ const PokemonCard = (props) => {
         poke_names.push(pokemons_data[p].pokemon_species.name);
         poke_nums.push(pokemons_data[p].entry_number);
         poke_img_p.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemons_data[p].entry_number}.png`);
+        poke_img_g.push(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemons_data[p].entry_number}.png`);
         // poke_description.push(descriptions[p].flavor_text_entries)
     }
 
@@ -130,7 +132,7 @@ const PokemonCard = (props) => {
                     <div className='flex flex-col justify-center items-center pt-4 pb-4  '>
                       
                             <div className='flex flex-col  justify-center items-center  pt-2  pb-2  border border-gray-400 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] rounded-lg max-w-40 min-w-max w-11/12 sm:w-3/5 md:w-3/6 lg:w-5/12 xl:w-4/6 2xl:w-3/6  bg-slate-100'>
-                            <Link href={`/pokedetails/${num}/?name=${poke_names[p]}&img=${poke_img_p[p]}`}  >
+                            <Link href={`/pokedetails/${num}/?name=${poke_names[p]}&img=${poke_img_g[p]}`}  >
                                 <div>
                                     <p className='text-center'> N° 0{num} </p>
 
@@ -138,8 +140,8 @@ const PokemonCard = (props) => {
                                     <picture className='flex justify-center items-center'>
                                         <img className='' src={poke_img_p[p]} alt="poke" />
                                     </picture>
-                                    <div className='text-center pb-2 pr-2 pl-2'>
-                                        <TipePokemon id={num} />
+                                    <div className='text-center pb-2 pr-2 pl-2 text-lg font-semibold'>
+                                        <TipePokemon  id={num} />
                                     </div>
                                 </div>
                                 </Link>
