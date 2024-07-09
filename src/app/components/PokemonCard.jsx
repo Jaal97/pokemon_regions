@@ -9,6 +9,7 @@ import Link from 'next/link';
 
 
 
+
 const PokemonCard = (props) => {
 
     let gen = props.gen;
@@ -116,7 +117,7 @@ const PokemonCard = (props) => {
     }
 
 
-    // console.log(pokemons[0])
+    // console.log(pokemons_data[1]);
     //console.log(poke_in);
     // console.log(poke_end);
     //console.log(descriptions[0].flavor_text_entries[50].flavor_text);
