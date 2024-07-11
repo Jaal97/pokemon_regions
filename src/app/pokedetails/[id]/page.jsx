@@ -19,13 +19,13 @@ const page = (props) => {
   // console.log(params);
 
   return (
-    <div className='h-[82vh] mb-5'>
+    <div className=' mb-8 h-[782px]'>
       <div className=' flex justify-center'>
-        <div className="max-w-lg rounded overflow-hidden shadow-lg mt-5  mr-2 ml-2">
-          <div className='border-[14px] border-cyan-900'>
+        <div className="max-w-lg rounded overflow-hidden shadow-lg mt-5  mr-2 ml-2 ">
+          <div className='border-[14px] border-cyan-900 sm:h-[764px] xl:h-[784px] bg-gradient-to-tl from-slate-50 to-slate-200'>
             <div className='flex justify-between'>
-              <p className="  font-bold text-3xl pl-4 pt-2 capitalize text-center ">{name}</p>
-              <p className='text-right  pr-4 pt-2 font-bold text-2xl text-orange-600'>N° 0{id}</p>
+              <p className="  font-bold text-3xl pl-4 pt-2 capitalize text-center text-emerald-900">{name}</p>
+              <p className='text-right  pr-4 pt-2 font-bold text-2xl text-stone-800'>N° 0{id}</p>
             </div>
 
 
@@ -39,7 +39,7 @@ const page = (props) => {
               <TipePokemon id={id} />
             </div>
 
-            <div className=" pb-2 pr-4 pl-4 text-lg font-semibold text-zinc-900 flex flex-col justify-center">
+            <div className=" pb-2 pr-4 pl-4 text-lg font-semibold text-emerald-900 flex flex-col justify-center">
               <DesPokemon id={id} />
             </div>
 

@@ -42,7 +42,7 @@ const StatsPokemon = (props) => {
         </div>
     }
 
-
+    console.log(pokes)
     //asignamos los valores de los stats
     hp = pokes.stats[0].base_stat;
     defense = pokes.stats[2].base_stat ;
@@ -50,19 +50,19 @@ const StatsPokemon = (props) => {
 
 
     return (
-        <div className='flex justify-around mt-4 mb-4 font-bold text-xl'>
+        <div className='flex justify-around mt-4 mb-4 font-bold text-xl text-center'>
             
                 
                 <p className='text-lime-600 font-extrabold'>
-                    <span className='text-zinc-600 font-bold'>HP: </span>
+                    <span className='text-stone-800 font-bold'>Vida: </span>
                     {hp}</p>
           
                
-                <p className='text-sky-700 font-extrabold'> <span className='text-zinc-700 font-bold'>Defense: </span> 
+                <p className='text-sky-700 font-extrabold'> <span className='text-stone-800 font-bold'>Defensa: </span> 
                     {defense}</p>
             
                 
-                <p className='text-orange-600 font-extrabold'><span className='text-zinc-700 font-bold'>Attack: </span> 
+                <p className='text-orange-600 font-extrabold'><span className='text-stone-800 font-bold'>Ataque: </span> 
                     {attack}</p>
            
         </div>
