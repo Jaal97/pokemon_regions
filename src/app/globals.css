@@ -10,51 +10,58 @@
 
 
 .roca{
-    color: #c8b68a;
+    color: #7c7769;
 }
 
 .hielo{
-    color:#73cebf;
+    color:#5abeae;
 } 
         
 .bicho{
-    color: #8fbf2a;
+    color: #2ecc71;
 } 
         
 .electrico{
-    color: #f4cf39;
+    color: #f4d03f;
+
+    /* color: #f4cf39; */
 } 
 
 .hada{
-    color: #eb8fe8;
+    color:  #FA8072;
+    /* color: #eb8fe8; */
 } 
 
 .siniestro{
-    color: #595164;
+    color: #131214;
 }
 
 .lucha{
-    color: #cd3d69;
+    color:  #c92c1a;
+    /* color: #cd3d69; */
 }
 
 .fuego{
-    color:#fe9951;
+    color:  #e67e22;
+    /* color:#fe9951; */
 }
 
 .volador{
-    color: #92aadd;
+    color: #87a0d8;
 }
 
 .fantasma{
-    color: #5269ab;
+    color: #aa6aaa;
+    /* color: #5269ab; */
 }
         
 .planta{
-    color: #64ba5c;
+    color: #229954 ;
 }
 
 .veneno{
-    color: #ab69c7;
+    color:  #8e44ad;
+    /* color: #ab69c7; */
 }
 
 .psiquico{
@@ -62,11 +69,12 @@
 }
         
 .acero{
-    color: #5b8ea1;
+    color: #717475;
 }
 
 .agua{
-    color: #4d8fd4;
+    color:   #2980b9 ;
+    /* color: #4d8fd4; */
 }
 
 .dragon{
@@ -74,7 +82,7 @@
 }
 
 .tierra{
-    color: #d97645;
+    color: #a83e08;
 } 
 
 .normal{

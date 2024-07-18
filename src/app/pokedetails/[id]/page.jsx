@@ -10,7 +10,7 @@ const page = (props) => {
 
   const params = useParams();
 
-  // console.log(props);
+  
   let id = props.params.id;
   let name = props.searchParams.name;
   let img = props.searchParams.img;
