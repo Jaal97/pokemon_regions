@@ -11,9 +11,6 @@ const page = () => {
     return (
         <div>
             <div className="p-6 m-6 relative text-surface flex flex-col justify-center bg-yellow-100 opacity-95 w-4/5  max-w-[60rem] mx-auto rounded-lg">
-
-
-
                 <picture className='flex justify-center w-full'>
                     <img src={pokego[0].image} className='rounded-lg ' alt="img_pokego" />
                 </picture>
@@ -37,22 +34,8 @@ const page = () => {
                     <li>{pokego[0].description_5}</li>
                     <li>{pokego[0].description_6}</li>
                 </ul>
-
-              
-
                 <p className='text-lg font-bold'>Puedes descargar Pokémon Go para dispositivos <Link href={'https://apps.apple.com/us/app/pok%C3%A9mon-go/id1094591345'} target='__blank' className='text-blue-700'>iOS</Link> y <Link href={'https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl'} target='__blank' className='text-blue-700'>Android</Link> </p>
-
-
-
-
-
-
-
-
-
             </div>
-
-
         </div>
     )
 }

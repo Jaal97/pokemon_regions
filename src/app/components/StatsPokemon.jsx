@@ -42,7 +42,7 @@ const StatsPokemon = (props) => {
         </div>
     }
 
-    console.log(pokes)
+    // console.log(pokes)
     //asignamos los valores de los stats
     hp = pokes.stats[0].base_stat;
     defense = pokes.stats[2].base_stat ;

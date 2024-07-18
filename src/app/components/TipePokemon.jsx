@@ -178,7 +178,6 @@ const TipePokemon = (props) => {
             <p className={`capitalize   ${tipo_1}`}>{tipo_1}
                 {
                     !ver
-
                         ?
                         <p></p>
                         :
@@ -188,9 +187,6 @@ const TipePokemon = (props) => {
 
         </div>
     )
-
-
-
 }
 
 export default TipePokemon
