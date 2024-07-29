@@ -14,7 +14,6 @@ const Navbar = () => {
 
   return (
 
-
     <nav className="bg-yellow-200">
       <div className=" flex flex-wrap items-center justify-between mx-auto p-4">
 
@@ -59,12 +58,10 @@ const Navbar = () => {
           </ul>
         </div>
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="" alt="" />
-          <span className="self-center text-2xl md:hover:text-blue-700 md:p-0  hover:text-blue-500 font-semibold whitespace-nowrap ">PokeCosas</span>
+          <img src="https://cdn3.iconfinder.com/data/icons/pokemon-go-3/512/pokemon_go_play_game_cinema_film_movie-256.png" alt="char" className='w-8' />
+          <span className="self-center text-2xl md:hover:text-blue-700 md:p-0  hover:text-blue-500 font-semibold whitespace-nowrap ">Pokelements</span>
         </a>
         <button onClick={toggleNavbar} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-300 rounded-lg md:hidden hover:bg-yellow-400 focus:outline-none ">
-
-
           <span className=' flex justify-end text-3xl cursor-pointer lg:hidden mx-2 '>
 
 

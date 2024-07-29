@@ -130,11 +130,7 @@ const GenenerationDetails = (props: any) => {
                 </p>
             </div>
             </Link>
-            
-
         </div>
-
-
     )
 }
 

@@ -41,19 +41,7 @@ const PokeCosasDetails = (props: any) => {
                 </p>
             </div>
             </div>
-
-          
-
-
-
-
-
-
-
-
         </div>
-
-
     )
 }
 

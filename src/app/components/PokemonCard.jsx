@@ -8,8 +8,6 @@ import TipePokemon from './TipePokemon';
 import Link from 'next/link';
 
 
-
-
 const PokemonCard = (props) => {
 
     let gen = props.gen;
@@ -122,7 +120,6 @@ const PokemonCard = (props) => {
             <div className='grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2  items-center'>
                 {poke_nums.map((num, p) => (
                     <div className='flex flex-col justify-center items-center pt-4 pb-4  '>
-                      
                             <div className='flex flex-col  justify-center items-center  pt-2  pb-2   border-[1.5px] border-cyan-900 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] rounded-lg max-w-40 min-w-max w-11/12 sm:w-3/5 md:w-3/6 lg:w-5/12 xl:w-4/6 2xl:w-3/6  bg-slate-100'>
                             <Link href={`/pokedetails/${num}/?name=${poke_names[p]}&img=${poke_img_g[p]}`}  >
                                 <div>
@@ -138,7 +135,6 @@ const PokemonCard = (props) => {
                                 </div>
                                 </Link>
                             </div>
-                       
                     </div>
                 ))
                 }

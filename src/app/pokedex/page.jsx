@@ -3,7 +3,7 @@ import PokemonCard from '../components/PokemonCard'
 
 const page = () => {
   return (
-    <div>
+    <div >
         <PokemonCard/>
     </div>
   )

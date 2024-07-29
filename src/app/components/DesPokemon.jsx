@@ -5,8 +5,6 @@ const DesPokemon = (props) => {
 
     let id = props.id;
     const [isLoading, setLoading] = useState(true);
-
-
     const [pokeDes, setPokeDes] = useState([]);
 
 
@@ -36,8 +34,6 @@ const DesPokemon = (props) => {
 
             })
     }, [isLoading])
-
-
 
 
 
@@ -98,15 +94,9 @@ const DesPokemon = (props) => {
 
     return (
 
-
         <div className=''>
             <p className='text-justify'>{description}</p>
         </div>
-
-
-
-
-
     )
 }
 

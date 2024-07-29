@@ -22,7 +22,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div class="w-full mx-auto max-w-screen-xl p-4  md:h-16  ">
+            <div class="w-full mx-auto max-w-screen-xl p-4  md:h-16  text-slate-900">
                 <p className='text-center text-lg font-medium'>
                     <Link href={'https://www.pokemon.com/el'} target='__blank'>
                         Pokémon © 1995 - 2024 Nintendo, Creatures, Game Freak
