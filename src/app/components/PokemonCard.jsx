@@ -117,15 +117,6 @@ const PokemonCard = (props) => {
     }
 
 
-    // console.log(pokemons_data[1]);
-    //console.log(poke_in);
-    // console.log(poke_end);
-    //console.log(descriptions[0].flavor_text_entries[50].flavor_text);
-    // console.log(tipos);
-    // console.log(poke_description)
-    //console.log(descriptions[0].flavor_text_entries[0].flavor_text)
-
-
     return (
         <div>
             <div className='grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2  items-center'>

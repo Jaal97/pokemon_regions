@@ -5,12 +5,20 @@ const Footer = () => {
     return (
         <footer class="bg-yellow-200 ">
             <div className='flex justify-center pt-4'>
-                <ul class="flex flex-wrap items-center mt-3 text-xl font-semibold text-yellow-600 sm:mt-0 ">
-                    <li>
-                        <a href="/" class="hover:underline me-4 md:me-6  font-medium hover:text-blue-700">Home</a>
+                <ul class="flex flex-wrap items-center mt-3 text-xl font-semibold text-black sm:mt-0 ">
+                    <li >
+                        <Link href={'/'} className='flex hover:text-blue-700'>
+                            <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/home_circle_icon_137496.png" className='w-8 ml-1 pr-1' alt="home" />
+                            <span className=" me-4 md:me-6  font-medium ">Home</span>
+                        </Link>
+
                     </li>
-                    <li>
-                        <a href="/contacto" class="hover:underline  font-medium hover:text-blue-700">Contacto</a>
+                    <li >
+                        <Link href={'/contacto'} className='flex hover:text-blue-700'>
+                            <img src="https://cdn2.iconfinder.com/data/icons/boxicons-solid-vol-1/24/bxs-contact-512.png" className='w-8 ml-1 pr-1' alt="contacto" />
+                            <span className=" font-medium ">Contacto</span>
+                        </Link>
+
                     </li>
                 </ul>
             </div>
@@ -19,11 +27,11 @@ const Footer = () => {
                     <Link href={'https://www.pokemon.com/el'} target='__blank'>
                         Pokémon © 1995 - 2024 Nintendo, Creatures, Game Freak
                     </Link>
-                    - 
+                    -
                     <Link href={'https://github.com/Jaal97'} target='__blank'>
                         Jaal97 2024
                     </Link>
-                    
+
                 </p>
             </div>
         </footer>
